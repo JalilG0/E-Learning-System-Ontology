@@ -1,0 +1,248 @@
+<http://www.example.org/elearning-ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.example.org/elearning-ontology> <http://purl.org/dc/elements/1.1/creator> "Heydar Mehdizade" .
+<http://www.example.org/elearning-ontology> <http://purl.org/dc/elements/1.1/creator> "Jalil Guliyev" .
+<http://www.example.org/elearning-ontology> <http://purl.org/dc/elements/1.1/creator> "Mahammadali Aliyev" .
+<http://www.example.org/elearning-ontology> <http://purl.org/dc/elements/1.1/description> "A formal ontology designed to model the academic processes, entities, and relationships within an e-learning platform. Architecturally separated into TBox and ABox layers."@en .
+<http://www.example.org/elearning-ontology> <http://purl.org/dc/elements/1.1/title> "E-Learning System Ontology"@en .
+<http://www.example.org/elearning-ontology> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
+<http://www.example.org/elearning-ontology> <http://www.w3.org/2000/01/rdf-schema#comment> "E-Learning System Ontology - Schema (TBox)"@en .
+<http://www.example.org/elearning-ontology> <http://www.w3.org/2002/07/owl#versionInfo> "2.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.example.org/elearning-ontology#enrolledIn
+<http://www.example.org/elearning-ontology#enrolledIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#enrolledIn> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/elearning-ontology#hasStudent> .
+<http://www.example.org/elearning-ontology#enrolledIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Student> .
+<http://www.example.org/elearning-ontology#enrolledIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#enrolledIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a Student to the Course they are enrolled in."@en .
+<http://www.example.org/elearning-ontology#enrolledIn> <http://www.w3.org/2000/01/rdf-schema#label> "enrolled in"@en .
+# 
+# http://www.example.org/elearning-ontology#hasAssignment
+<http://www.example.org/elearning-ontology#hasAssignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#hasAssignment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#hasAssignment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Assignment> .
+<http://www.example.org/elearning-ontology#hasAssignment> <http://www.w3.org/2000/01/rdf-schema#label> "has assignment"@en .
+# 
+# http://www.example.org/elearning-ontology#hasGrade
+<http://www.example.org/elearning-ontology#hasGrade> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#hasGrade> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#hasGrade> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Submission> .
+<http://www.example.org/elearning-ontology#hasGrade> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Grade> .
+<http://www.example.org/elearning-ontology#hasGrade> <http://www.w3.org/2000/01/rdf-schema#label> "has grade"@en .
+# 
+# http://www.example.org/elearning-ontology#hasModule
+<http://www.example.org/elearning-ontology#hasModule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#hasModule> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#hasModule> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Module> .
+<http://www.example.org/elearning-ontology#hasModule> <http://www.w3.org/2000/01/rdf-schema#label> "has module"@en .
+# 
+# http://www.example.org/elearning-ontology#hasPrerequisite
+<http://www.example.org/elearning-ontology#hasPrerequisite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#hasPrerequisite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<http://www.example.org/elearning-ontology#hasPrerequisite> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#hasPrerequisite> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#hasPrerequisite> <http://www.w3.org/2000/01/rdf-schema#comment> "Transitive: if A requires B and B requires C, then A requires C."@en .
+<http://www.example.org/elearning-ontology#hasPrerequisite> <http://www.w3.org/2000/01/rdf-schema#label> "has prerequisite"@en .
+# 
+# http://www.example.org/elearning-ontology#hasStudent
+<http://www.example.org/elearning-ontology#hasStudent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#hasStudent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#hasStudent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Student> .
+<http://www.example.org/elearning-ontology#hasStudent> <http://www.w3.org/2000/01/rdf-schema#label> "has student"@en .
+# 
+# http://www.example.org/elearning-ontology#hasSubmission
+<http://www.example.org/elearning-ontology#hasSubmission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#hasSubmission> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/elearning-ontology#submissionFor> .
+<http://www.example.org/elearning-ontology#hasSubmission> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Assignment> .
+<http://www.example.org/elearning-ontology#hasSubmission> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Submission> .
+<http://www.example.org/elearning-ontology#hasSubmission> <http://www.w3.org/2000/01/rdf-schema#label> "has submission"@en .
+# 
+# http://www.example.org/elearning-ontology#isTaughtBy
+<http://www.example.org/elearning-ontology#isTaughtBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#isTaughtBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/elearning-ontology#teaches> .
+<http://www.example.org/elearning-ontology#isTaughtBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#isTaughtBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#isTaughtBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Instructor> .
+<http://www.example.org/elearning-ontology#isTaughtBy> <http://www.w3.org/2000/01/rdf-schema#label> "is taught by"@en .
+# 
+# http://www.example.org/elearning-ontology#submissionFor
+<http://www.example.org/elearning-ontology#submissionFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#submissionFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Submission> .
+<http://www.example.org/elearning-ontology#submissionFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Assignment> .
+<http://www.example.org/elearning-ontology#submissionFor> <http://www.w3.org/2000/01/rdf-schema#label> "submission for"@en .
+# 
+# http://www.example.org/elearning-ontology#submits
+<http://www.example.org/elearning-ontology#submits> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#submits> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.example.org/elearning-ontology#submittedBy> .
+<http://www.example.org/elearning-ontology#submits> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Student> .
+<http://www.example.org/elearning-ontology#submits> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Submission> .
+<http://www.example.org/elearning-ontology#submits> <http://www.w3.org/2000/01/rdf-schema#label> "submits"@en .
+# 
+# http://www.example.org/elearning-ontology#submittedBy
+<http://www.example.org/elearning-ontology#submittedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#submittedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#submittedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Submission> .
+<http://www.example.org/elearning-ontology#submittedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Student> .
+<http://www.example.org/elearning-ontology#submittedBy> <http://www.w3.org/2000/01/rdf-schema#label> "submitted by"@en .
+# 
+# http://www.example.org/elearning-ontology#teaches
+<http://www.example.org/elearning-ontology#teaches> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.example.org/elearning-ontology#teaches> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Instructor> .
+<http://www.example.org/elearning-ontology#teaches> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#teaches> <http://www.w3.org/2000/01/rdf-schema#label> "teaches"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.example.org/elearning-ontology#courseCode
+<http://www.example.org/elearning-ontology#courseCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/elearning-ontology#courseCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#courseCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#courseCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://www.example.org/elearning-ontology#courseCode> <http://www.w3.org/2000/01/rdf-schema#label> "course code"@en .
+# 
+# http://www.example.org/elearning-ontology#courseTitle
+<http://www.example.org/elearning-ontology#courseTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/elearning-ontology#courseTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#courseTitle> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Course> .
+<http://www.example.org/elearning-ontology#courseTitle> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.example.org/elearning-ontology#dueDate
+<http://www.example.org/elearning-ontology#dueDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/elearning-ontology#dueDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#dueDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Assignment> .
+<http://www.example.org/elearning-ontology#dueDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://www.example.org/elearning-ontology#hasEmail
+<http://www.example.org/elearning-ontology#hasEmail> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/elearning-ontology#hasEmail> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#hasEmail> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Student> .
+<http://www.example.org/elearning-ontology#hasEmail> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.example.org/elearning-ontology#hasName
+<http://www.example.org/elearning-ontology#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/elearning-ontology#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#hasName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Person> .
+<http://www.example.org/elearning-ontology#hasName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.example.org/elearning-ontology#score
+<http://www.example.org/elearning-ontology#score> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/elearning-ontology#score> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#score> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Grade> .
+<http://www.example.org/elearning-ontology#score> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.example.org/elearning-ontology#submissionDate
+<http://www.example.org/elearning-ontology#submissionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.example.org/elearning-ontology#submissionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://www.example.org/elearning-ontology#submissionDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.example.org/elearning-ontology#Submission> .
+<http://www.example.org/elearning-ontology#submissionDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.example.org/elearning-ontology#AcademicContent
+<http://www.example.org/elearning-ontology#AcademicContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#AcademicContent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.example.org/elearning-ontology#Assessment> .
+<http://www.example.org/elearning-ontology#AcademicContent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.example.org/elearning-ontology#Evaluation> .
+<http://www.example.org/elearning-ontology#AcademicContent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.example.org/elearning-ontology#Person> .
+<http://www.example.org/elearning-ontology#AcademicContent> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.example.org/elearning-ontology#Submission> .
+<http://www.example.org/elearning-ontology#AcademicContent> <http://www.w3.org/2000/01/rdf-schema#label> "Academic Content"@en .
+# 
+# http://www.example.org/elearning-ontology#Assessment
+<http://www.example.org/elearning-ontology#Assessment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Assessment> <http://www.w3.org/2000/01/rdf-schema#label> "Assessment"@en .
+# 
+# http://www.example.org/elearning-ontology#Assignment
+<http://www.example.org/elearning-ontology#Assignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Assignment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/elearning-ontology#Assessment> .
+<http://www.example.org/elearning-ontology#Assignment> <http://www.w3.org/2000/01/rdf-schema#label> "Assignment"@en .
+# 
+# http://www.example.org/elearning-ontology#Course
+<http://www.example.org/elearning-ontology#Course> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Course> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/elearning-ontology#AcademicContent> .
+<http://www.example.org/elearning-ontology#Course> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <http://www.example.org/elearning-ontology#Instructor> .
+_:genid1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/elearning-ontology#isTaughtBy> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/elearning-ontology#Course> <http://www.w3.org/2000/01/rdf-schema#label> "Course"@en .
+# 
+# http://www.example.org/elearning-ontology#Evaluation
+<http://www.example.org/elearning-ontology#Evaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Evaluation> <http://www.w3.org/2000/01/rdf-schema#label> "Evaluation"@en .
+# 
+# http://www.example.org/elearning-ontology#Grade
+<http://www.example.org/elearning-ontology#Grade> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Grade> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/elearning-ontology#Evaluation> .
+<http://www.example.org/elearning-ontology#Grade> <http://www.w3.org/2000/01/rdf-schema#label> "Grade"@en .
+# 
+# http://www.example.org/elearning-ontology#Instructor
+<http://www.example.org/elearning-ontology#Instructor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Instructor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/elearning-ontology#Person> .
+<http://www.example.org/elearning-ontology#Instructor> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.example.org/elearning-ontology#Student> .
+<http://www.example.org/elearning-ontology#Instructor> <http://www.w3.org/2000/01/rdf-schema#label> "Instructor"@en .
+# 
+# http://www.example.org/elearning-ontology#Module
+<http://www.example.org/elearning-ontology#Module> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Module> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/elearning-ontology#AcademicContent> .
+<http://www.example.org/elearning-ontology#Module> <http://www.w3.org/2000/01/rdf-schema#label> "Module"@en .
+# 
+# http://www.example.org/elearning-ontology#Person
+<http://www.example.org/elearning-ontology#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# http://www.example.org/elearning-ontology#Student
+<http://www.example.org/elearning-ontology#Student> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Student> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.example.org/elearning-ontology#Person> .
+<http://www.example.org/elearning-ontology#Student> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#onClass> <http://www.example.org/elearning-ontology#Course> .
+_:genid2 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.example.org/elearning-ontology#enrolledIn> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.example.org/elearning-ontology#Student> <http://www.w3.org/2000/01/rdf-schema#label> "Student"@en .
+# 
+# http://www.example.org/elearning-ontology#Submission
+<http://www.example.org/elearning-ontology#Submission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.example.org/elearning-ontology#Submission> <http://www.w3.org/2000/01/rdf-schema#label> "Submission"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

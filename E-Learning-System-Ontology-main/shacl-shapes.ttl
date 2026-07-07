@@ -1,0 +1,36 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <http://www.example.org/elearning-ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# 1. COURSE SHAPE
+:CourseShape a sh:NodeShape ;
+    sh:targetClass :Course ;
+    sh:property [
+        sh:path :isTaughtBy ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Instructor ;
+        sh:message "A course must have exactly one instructor!" ;
+    ] .
+
+# 2. STUDENT SHAPE
+:StudentShape a sh:NodeShape ;
+    sh:targetClass :Student ;
+    sh:property [
+        sh:path :enrolledIn ;
+        sh:minCount 1 ;
+        sh:class :Course ;
+        sh:message "A student must be enrolled in at least one course!" ;
+    ] .
+
+# 3. GRADE SHAPE
+:GradeShape a sh:NodeShape ;
+    sh:targetClass :Grade ;
+    sh:property [
+        sh:path :score ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 100.0 ;
+        sh:message "Grade score must be a float between 0.0 and 100.0!" ;
+    ] .

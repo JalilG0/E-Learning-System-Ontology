@@ -1,0 +1,125 @@
+@prefix : <http://www.example.org/elearning-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# --- Kurum ve Fakülteler ---
+:EngineeringFaculty rdf:type :Faculty .
+:ComputerEngineering rdf:type :Department ;
+                     :belongsToDepartment :EngineeringFaculty ;
+                     :offersProgram :BScComputerEngineering .
+:BScComputerEngineering rdf:type :DegreeProgram .
+
+# --- Eğitmenler ---
+:ProfSmith rdf:type :Instructor ;
+           :hasName "Dr. Alan Smith" ;
+           :hasEmail "alan.smith@example.edu" ;
+           :belongsToDepartment :ComputerEngineering .
+
+:ProfJohnson rdf:type :Instructor ;
+             :hasName "Dr. Sarah Johnson" ;
+             :hasEmail "sarah.j@example.edu" .
+
+# --- Dersler ---
+:CS101 rdf:type :Course ;
+       :courseCode "CS-101" ;
+       :courseTitle "Introduction to Programming" ;
+       :credits 4 ;
+       :isTaughtBy :ProfSmith .
+
+:CS201 rdf:type :Course ;
+       :courseCode "CS-201" ;
+       :courseTitle "Data Structures" ;
+       :credits 5 ;
+       :hasPrerequisite :CS101 ;
+       :isTaughtBy :ProfJohnson .
+
+:CS550 rdf:type :Course ;
+       :courseCode "CS-550" ;
+       :courseTitle "Knowledge Engineering" ;
+       :credits 3 ;
+       :isTaughtBy :ProfSmith .
+
+# --- Öğrenciler ve Kayıtlar ---
+:Student_Jalil rdf:type :Student ;
+               :hasName "Jalil Guliyev" ;
+               :hasEmail "jalil@student.example.edu" ;
+               :enrolledIn :CS101, :CS550 .
+
+:Student_Mahammadali rdf:type :Student ;
+                     :hasName "Mahammadali Aliyev" ;
+                     :hasEmail "mahammadali@student.example.edu" ;
+                     :enrolledIn :CS101, :CS201, :CS550 .
+
+:Student_Heydar rdf:type :Student ;
+                :hasName "Heydar Mehdizade" ;
+                :hasEmail "heydar@student.example.edu" ;
+                :enrolledIn :CS201, :CS550 .
+
+# --- Ödevler, Teslimler ve Notlar ---
+:CS550_Project rdf:type :Assignment ;
+               :dueDate "2026-06-15T23:59:00"^^xsd:dateTime .
+:CS550 :hasAssignment :CS550_Project .
+
+:Sub_Jalil_CS550 rdf:type :Submission ;
+                 :submittedBy :Student_Jalil ;
+                 :submissionFor :CS550_Project ;
+                 :submissionDate "2026-06-05T10:00:00"^^xsd:dateTime ;
+                 :hasGrade :Grade_Jalil_CS550 .
+
+:Grade_Jalil_CS550 rdf:type :Grade ;
+                   :score 95.5 .
+
+# ===================================================================
+# --- GENERATED DATA (KASITLI OLARAK EKSİK/HATALI VERİLER) ---
+# ===================================================================
+
+# --- GENERATED STUDENTS ---
+:Student_Gen1 rdf:type :Student ;
+    :hasName "Mrs. Bertram Jones" ;
+    :hasEmail "mrs..bertram.jones@student.example.edu" .
+
+:Student_Gen2 rdf:type :Student ;
+    :hasName "Mayme Dibbert" ;
+    :hasEmail "mayme.dibbert@student.example.edu" .
+
+:Student_Gen3 rdf:type :Student ;
+    :hasName "Marybelle Sporer" ;
+    :hasEmail "marybelle.sporer@student.example.edu" .
+
+:Student_Gen4 rdf:type :Student ;
+    :hasName "Evan Gulgowski" ;
+    :hasEmail "evan.gulgowski@student.example.edu" .
+
+:Student_Gen5 rdf:type :Student ;
+    :hasName "Doretha Stracke" ;
+    :hasEmail "doretha.stracke@student.example.edu" .
+
+# --- GENERATED COURSES ---
+:Course_Gen1 rdf:type :Course ;
+    :courseCode "CS-292" ;
+    :courseTitle "Bachelor of Business" .
+
+:Course_Gen2 rdf:type :Course ;
+    :courseCode "CS-226" ;
+    :courseTitle "Bachelor of Design" .
+
+:Course_Gen3 rdf:type :Course ;
+    :courseCode "CS-131" ;
+    :courseTitle "Master of Law" .
+
+# --- GENERATED GRADES ---
+:Grade_Gen1 rdf:type :Grade ;
+    :score "64.6"^^xsd:float .
+
+:Grade_Gen2 rdf:type :Grade ;
+    :score "76.3"^^xsd:float .
+
+:Grade_Gen3 rdf:type :Grade ;
+    :score "51.4"^^xsd:float .
+
+:Grade_Gen4 rdf:type :Grade ;
+    :score "96.6"^^xsd:float .
+
+:Grade_Gen5 rdf:type :Grade ;
+    :score "84.9"^^xsd:float .

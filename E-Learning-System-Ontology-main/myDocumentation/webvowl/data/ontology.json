@@ -1,0 +1,630 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.example.org/elearning-ontology", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "en" : "E-Learning System Ontology"
+    },
+    "iri" : "http://www.example.org/elearning-ontology",
+    "version" : "2.0",
+    "author" : [ "Jalil Guliyev", "Mahammadali Aliyev", "Heydar Mehdizade" ],
+    "description" : {
+      "en" : "A formal ontology designed to model the academic processes, entities, and relationships within an e-learning platform. Architecturally separated into TBox and ABox layers."
+    },
+    "comments" : {
+      "en" : "E-Learning System Ontology - Schema (TBox)"
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "http://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Mahammadali Aliyev",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Heydar Mehdizade",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Jalil Guliyev",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "2.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "E-Learning System Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.example.org/elearning-ontology#Student",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Student",
+      "en" : "Student"
+    },
+    "id" : "5",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#Module",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Module",
+      "en" : "Module"
+    },
+    "id" : "2",
+    "superClasses" : [ "16" ]
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#Instructor",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Instructor",
+      "en" : "Instructor"
+    },
+    "id" : "11",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "15",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "27",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "32",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#Person",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "subClasses" : [ "11", "5" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "38",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "29",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "39",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#Assessment",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Assessment",
+      "en" : "Assessment"
+    },
+    "subClasses" : [ "8" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#Course",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Course",
+      "en" : "Course"
+    },
+    "id" : "1",
+    "superClasses" : [ "16" ]
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#Grade",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Grade",
+      "en" : "Grade"
+    },
+    "id" : "14",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#Evaluation",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Evaluation",
+      "en" : "Evaluation"
+    },
+    "subClasses" : [ "14" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#Submission",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Submission",
+      "en" : "Submission"
+    },
+    "id" : "4"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#AcademicContent",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AcademicContent",
+      "en" : "Academic Content"
+    },
+    "subClasses" : [ "1", "2" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#Assignment",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Assignment",
+      "en" : "Assignment"
+    },
+    "id" : "8",
+    "superClasses" : [ "21" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "12",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "37",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "40",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "41",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "42",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "43",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "44",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "45",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "46",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://www.example.org/elearning-ontology#hasModule",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasModule",
+      "en" : "has module"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#submittedBy",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "submittedBy",
+      "en" : "submitted by"
+    },
+    "domain" : "4",
+    "attributes" : [ "functional", "object" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#dueDate",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "dueDate"
+    },
+    "domain" : "8",
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#isTaughtBy",
+    "inverse" : "12",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "isTaughtBy",
+      "en" : "is taught by"
+    },
+    "domain" : "1",
+    "attributes" : [ "functional", "object" ],
+    "id" : "10"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#score",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "score"
+    },
+    "domain" : "14",
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "13"
+  }, {
+    "range" : "16",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#enrolledIn",
+    "inverse" : "19",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "enrolledIn",
+      "en" : "enrolled in"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Relates a Student to the Course they are enrolled in."
+    },
+    "attributes" : [ "object" ],
+    "id" : "18"
+  }, {
+    "range" : "21",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "20"
+  }, {
+    "range" : "6",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "22"
+  }, {
+    "range" : "16",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "23"
+  }, {
+    "range" : "25",
+    "domain" : "14",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "24"
+  }, {
+    "range" : "6",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#teaches",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "teaches",
+      "en" : "teaches"
+    },
+    "domain" : "11",
+    "attributes" : [ "object" ],
+    "id" : "12"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#hasEmail",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "hasEmail"
+    },
+    "domain" : "5",
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#submits",
+    "inverse" : "3",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "submits",
+      "en" : "submits"
+    },
+    "domain" : "5",
+    "attributes" : [ "object" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#courseCode",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "courseCode",
+      "en" : "course code"
+    },
+    "domain" : "1",
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "31"
+  }, {
+    "range" : "6",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#hasSubmission",
+    "inverse" : "35",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasSubmission",
+      "en" : "has submission"
+    },
+    "domain" : "8",
+    "attributes" : [ "object" ],
+    "id" : "34"
+  }, {
+    "range" : "4",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "36"
+  }, {
+    "range" : "5",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "37"
+  }, {
+    "range" : "21",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "40"
+  }, {
+    "range" : "25",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "41"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#hasName",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "hasName"
+    },
+    "domain" : "6",
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "42"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#submissionDate",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "submissionDate"
+    },
+    "domain" : "4",
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "43"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#hasAssignment",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasAssignment",
+      "en" : "has assignment"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "44"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#courseTitle",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "courseTitle"
+    },
+    "domain" : "1",
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "45"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#submissionFor",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "submissionFor",
+      "en" : "submission for"
+    },
+    "domain" : "4",
+    "attributes" : [ "object" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#hasPrerequisite",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "hasPrerequisite",
+      "en" : "has prerequisite"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Transitive: if A requires B and B requires C, then A requires C."
+    },
+    "attributes" : [ "transitive", "object" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#hasStudent",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasStudent",
+      "en" : "has student"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://www.example.org/elearning-ontology#hasGrade",
+    "baseIri" : "http://www.example.org/elearning-ontology",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasGrade",
+      "en" : "has grade"
+    },
+    "domain" : "4",
+    "attributes" : [ "functional", "object" ],
+    "id" : "47"
+  } ]
+}

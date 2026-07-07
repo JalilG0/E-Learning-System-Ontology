@@ -1,0 +1,271 @@
+@prefix : <http://www.example.org/elearning-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/elearning-ontology#> .
+
+<http://www.example.org/elearning-ontology> rdf:type owl:Ontology ;
+                                             <http://purl.org/dc/elements/1.1/creator> "Heydar Mehdizade" ,
+                                                                                       "Jalil Guliyev" ,
+                                                                                       "Mahammadali Aliyev" ;
+                                             <http://purl.org/dc/elements/1.1/description> "A formal ontology designed to model the academic processes, entities, and relationships within an e-learning platform. Architecturally separated into TBox and ABox layers."@en ;
+                                             <http://purl.org/dc/elements/1.1/title> "E-Learning System Ontology"@en ;
+                                             <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
+                                             rdfs:comment "E-Learning System Ontology - Schema (TBox)"@en ;
+                                             owl:versionInfo "2.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.example.org/elearning-ontology#enrolledIn
+:enrolledIn rdf:type owl:ObjectProperty ;
+            owl:inverseOf :hasStudent ;
+            rdfs:domain :Student ;
+            rdfs:range :Course ;
+            rdfs:comment "Relates a Student to the Course they are enrolled in."@en ;
+            rdfs:label "enrolled in"@en .
+
+
+###  http://www.example.org/elearning-ontology#hasAssignment
+:hasAssignment rdf:type owl:ObjectProperty ;
+               rdfs:domain :Course ;
+               rdfs:range :Assignment ;
+               rdfs:label "has assignment"@en .
+
+
+###  http://www.example.org/elearning-ontology#hasGrade
+:hasGrade rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Submission ;
+          rdfs:range :Grade ;
+          rdfs:label "has grade"@en .
+
+
+###  http://www.example.org/elearning-ontology#hasModule
+:hasModule rdf:type owl:ObjectProperty ;
+           rdfs:domain :Course ;
+           rdfs:range :Module ;
+           rdfs:label "has module"@en .
+
+
+###  http://www.example.org/elearning-ontology#hasPrerequisite
+:hasPrerequisite rdf:type owl:ObjectProperty ,
+                          owl:TransitiveProperty ;
+                 rdfs:domain :Course ;
+                 rdfs:range :Course ;
+                 rdfs:comment "Transitive: if A requires B and B requires C, then A requires C."@en ;
+                 rdfs:label "has prerequisite"@en .
+
+
+###  http://www.example.org/elearning-ontology#hasStudent
+:hasStudent rdf:type owl:ObjectProperty ;
+            rdfs:domain :Course ;
+            rdfs:range :Student ;
+            rdfs:label "has student"@en .
+
+
+###  http://www.example.org/elearning-ontology#hasSubmission
+:hasSubmission rdf:type owl:ObjectProperty ;
+               owl:inverseOf :submissionFor ;
+               rdfs:domain :Assignment ;
+               rdfs:range :Submission ;
+               rdfs:label "has submission"@en .
+
+
+###  http://www.example.org/elearning-ontology#isTaughtBy
+:isTaughtBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :teaches ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Course ;
+            rdfs:range :Instructor ;
+            rdfs:label "is taught by"@en .
+
+
+###  http://www.example.org/elearning-ontology#submissionFor
+:submissionFor rdf:type owl:ObjectProperty ;
+               rdfs:domain :Submission ;
+               rdfs:range :Assignment ;
+               rdfs:label "submission for"@en .
+
+
+###  http://www.example.org/elearning-ontology#submits
+:submits rdf:type owl:ObjectProperty ;
+         owl:inverseOf :submittedBy ;
+         rdfs:domain :Student ;
+         rdfs:range :Submission ;
+         rdfs:label "submits"@en .
+
+
+###  http://www.example.org/elearning-ontology#submittedBy
+:submittedBy rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Submission ;
+             rdfs:range :Student ;
+             rdfs:label "submitted by"@en .
+
+
+###  http://www.example.org/elearning-ontology#teaches
+:teaches rdf:type owl:ObjectProperty ;
+         rdfs:domain :Instructor ;
+         rdfs:range :Course ;
+         rdfs:label "teaches"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.example.org/elearning-ontology#courseCode
+:courseCode rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Course ;
+            rdfs:range xsd:string ;
+            rdfs:label "course code"@en .
+
+
+###  http://www.example.org/elearning-ontology#courseTitle
+:courseTitle rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Course ;
+             rdfs:range xsd:string .
+
+
+###  http://www.example.org/elearning-ontology#dueDate
+:dueDate rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Assignment ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://www.example.org/elearning-ontology#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Student ;
+          rdfs:range xsd:string .
+
+
+###  http://www.example.org/elearning-ontology#hasName
+:hasName rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string .
+
+
+###  http://www.example.org/elearning-ontology#score
+:score rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Grade ;
+       rdfs:range xsd:float .
+
+
+###  http://www.example.org/elearning-ontology#submissionDate
+:submissionDate rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Submission ;
+                rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.example.org/elearning-ontology#AcademicContent
+:AcademicContent rdf:type owl:Class ;
+                 owl:disjointWith :Assessment ,
+                                  :Evaluation ,
+                                  :Person ,
+                                  :Submission ;
+                 rdfs:label "Academic Content"@en .
+
+
+###  http://www.example.org/elearning-ontology#Assessment
+:Assessment rdf:type owl:Class ;
+            rdfs:label "Assessment"@en .
+
+
+###  http://www.example.org/elearning-ontology#Assignment
+:Assignment rdf:type owl:Class ;
+            rdfs:subClassOf :Assessment ;
+            rdfs:label "Assignment"@en .
+
+
+###  http://www.example.org/elearning-ontology#Course
+:Course rdf:type owl:Class ;
+        rdfs:subClassOf :AcademicContent ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isTaughtBy ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Instructor
+                        ] ;
+        rdfs:label "Course"@en .
+
+
+###  http://www.example.org/elearning-ontology#Evaluation
+:Evaluation rdf:type owl:Class ;
+            rdfs:label "Evaluation"@en .
+
+
+###  http://www.example.org/elearning-ontology#Grade
+:Grade rdf:type owl:Class ;
+       rdfs:subClassOf :Evaluation ;
+       rdfs:label "Grade"@en .
+
+
+###  http://www.example.org/elearning-ontology#Instructor
+:Instructor rdf:type owl:Class ;
+            rdfs:subClassOf :Person ;
+            owl:disjointWith :Student ;
+            rdfs:label "Instructor"@en .
+
+
+###  http://www.example.org/elearning-ontology#Module
+:Module rdf:type owl:Class ;
+        rdfs:subClassOf :AcademicContent ;
+        rdfs:label "Module"@en .
+
+
+###  http://www.example.org/elearning-ontology#Person
+:Person rdf:type owl:Class ;
+        rdfs:label "Person"@en .
+
+
+###  http://www.example.org/elearning-ontology#Student
+:Student rdf:type owl:Class ;
+         rdfs:subClassOf :Person ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :enrolledIn ;
+                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Course
+                         ] ;
+         rdfs:label "Student"@en .
+
+
+###  http://www.example.org/elearning-ontology#Submission
+:Submission rdf:type owl:Class ;
+            rdfs:label "Submission"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

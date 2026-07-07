@@ -1,0 +1,129 @@
+# ===================================================================
+# E-Learning System Ontology - SPARQL Queries
+# Authors: Jalil Guliyev, Mahammadali Aliyev, Heydar Mehdizade
+# ===================================================================
+
+PREFIX el: <http://www.example.org/elearning-ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# -------------------------------------------------------------------
+# Q1: Basic Retrieval (All students and emails)
+# Purpose: Extract a flat list of all registered students and their contact info.
+# -------------------------------------------------------------------
+SELECT ?name ?email WHERE {
+  ?student a el:Student ;
+           el:hasName ?name ;
+           el:hasEmail ?email .
+}
+
+# -------------------------------------------------------------------
+# Q2: Relational Navigation (Courses a specific student is enrolled in)
+# Purpose: Demonstrate object property traversal by finding all courses Heydar is taking.
+# -------------------------------------------------------------------
+SELECT ?courseTitle WHERE {
+  ?student a el:Student ;
+           el:hasName "Heydar Mehdizade" ;
+           el:enrolledIn ?course .
+  ?course el:courseTitle ?courseTitle .
+}
+
+# -------------------------------------------------------------------
+# Q3: Filtering (Courses with more than 4 credits)
+# Purpose: Numeric filtering capabilities by retrieving high-workload courses.
+# -------------------------------------------------------------------
+SELECT ?courseCode ?title ?credits WHERE {
+  ?course a el:Course ;
+          el:courseCode ?courseCode ;
+          el:courseTitle ?title ;
+          el:credits ?credits .
+  FILTER (?credits > 4)
+}
+
+# -------------------------------------------------------------------
+# Q4: Aggregation (Counting students per course)
+# Purpose: Utilize aggregate functions (COUNT, GROUP BY) to determine enrollment capacity.
+# -------------------------------------------------------------------
+SELECT ?courseTitle (COUNT(?student) AS ?studentCount) WHERE {
+  ?course a el:Course ;
+          el:courseTitle ?courseTitle .
+  OPTIONAL { ?course el:hasStudent ?student }
+} GROUP BY ?courseTitle
+
+# -------------------------------------------------------------------
+# Q5: Hierarchical Query (Advanced courses requiring CS-101)
+# Purpose: Test transitive prerequisite chains ensuring correct academic paths.
+# -------------------------------------------------------------------
+SELECT ?advancedCourseTitle WHERE {
+  ?prereq el:courseCode "CS-101" .
+  ?advancedCourse el:hasPrerequisite ?prereq ;
+                  el:courseTitle ?advancedCourseTitle .
+}
+
+# -------------------------------------------------------------------
+# Q6: Reasoning (Retrieve all Academic Content instances)
+# Purpose: Verify the reasoner's ability to classify individuals into superclasses.
+# -------------------------------------------------------------------
+SELECT ?content ?type WHERE {
+  ?content a el:AcademicContent .
+  ?content a ?type .
+}
+
+# -------------------------------------------------------------------
+# Q7: Deep Relationship Traversal
+# Purpose: Find the department of the instructor teaching a specific course.
+# -------------------------------------------------------------------
+SELECT DISTINCT ?courseTitle ?instructorName ?department WHERE {
+  ?course rdf:type el:Course .
+  ?course el:courseTitle ?courseTitle .
+  ?course el:isTaughtBy ?instructor .
+  
+  ?instructor el:hasName ?instructorName .
+  ?instructor el:belongsToDepartment ?department .
+}
+
+# -------------------------------------------------------------------
+# Q8: Date Comparison / Logical Filtering
+# Purpose: Extract submission dates and deadlines for chronological logic testing.
+# -------------------------------------------------------------------
+SELECT DISTINCT ?studentName ?courseTitle ?submittedDate ?deadline WHERE {
+  ?submission rdf:type el:Submission .
+  ?submission el:submittedBy ?student .
+  ?submission el:submissionFor ?assignment .
+  ?submission el:submissionDate ?submittedDate .
+              
+  ?student el:hasName ?studentName .
+  
+  ?course el:hasAssignment ?assignment .
+  ?course el:courseTitle ?courseTitle .
+          
+  ?assignment el:dueDate ?deadline .
+}
+
+# -------------------------------------------------------------------
+# Q9: Advanced Aggregation (Calculating Average Score per Course)
+# Purpose: Use the AVG function to calculate the mean academic performance.
+# -------------------------------------------------------------------
+SELECT ?courseTitle (AVG(?score) AS ?averageScore) WHERE {
+  ?course rdf:type el:Course .
+  ?course el:courseTitle ?courseTitle .
+  ?course el:hasAssignment ?assignment .
+          
+  ?submission el:submissionFor ?assignment .
+  ?submission el:hasGrade ?grade .
+              
+  ?grade el:score ?score .
+} GROUP BY ?courseTitle
+
+# -------------------------------------------------------------------
+# Q10: Chain Relationship Extraction (Students Taught by a Specific Instructor)
+# Purpose: Map the sphere of influence of an instructor by chaining relations.
+# -------------------------------------------------------------------
+SELECT DISTINCT ?instructorName ?studentName WHERE {
+  ?instructor a el:Instructor ;
+              el:hasName "Dr. Alan Smith" ;
+              el:teaches ?course .
+              
+  ?student el:enrolledIn ?course ;
+           el:hasName ?studentName .
+}

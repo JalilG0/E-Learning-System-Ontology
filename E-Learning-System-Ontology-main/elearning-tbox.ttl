@@ -1,0 +1,476 @@
+@prefix : <http://www.example.org/elearning-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/elearning-ontology#> .
+
+<http://www.example.org/elearning-ontology> rdf:type owl:Ontology ;
+                                             owl:imports <file:/Users/jalilguliyev/Documents/GitHub/E-Learning-System-Ontology/shacl-shapes.ttl> ,
+                                                         <file:/Users/jalilguliyev/Documents/GitHub/E-Learning-System-Ontology/elearning-abox%202.ttl> ;
+                                             rdfs:comment "E-Learning System Ontology expanded with institutional hierarchy and diverse learning materials (TBox)." ;
+                                             owl:versionInfo "2.0 (Expanded)" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.example.org/elearning-ontology#belongsToDepartment
+:belongsToDepartment rdf:type owl:ObjectProperty ;
+                     rdfs:range :Department .
+
+
+###  http://www.example.org/elearning-ontology#enrolledIn
+:enrolledIn rdf:type owl:ObjectProperty ;
+            owl:inverseOf :hasStudent ;
+            rdfs:domain :Student ;
+            rdfs:range :Course .
+
+
+###  http://www.example.org/elearning-ontology#hasAssignment
+:hasAssignment rdf:type owl:ObjectProperty ;
+               rdfs:domain :Course ;
+               rdfs:range :Assignment .
+
+
+###  http://www.example.org/elearning-ontology#hasGrade
+:hasGrade rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Submission ;
+          rdfs:range :Grade .
+
+
+###  http://www.example.org/elearning-ontology#hasModule
+:hasModule rdf:type owl:ObjectProperty ;
+           rdfs:domain :Course ;
+           rdfs:range :Module .
+
+
+###  http://www.example.org/elearning-ontology#hasPrerequisite
+:hasPrerequisite rdf:type owl:ObjectProperty ,
+                          owl:TransitiveProperty ;
+                 rdfs:domain :Course ;
+                 rdfs:range :Course .
+
+
+###  http://www.example.org/elearning-ontology#hasStudent
+:hasStudent rdf:type owl:ObjectProperty ;
+            rdfs:domain :Course ;
+            rdfs:range :Student .
+
+
+###  http://www.example.org/elearning-ontology#hasSubmission
+:hasSubmission rdf:type owl:ObjectProperty ;
+               owl:inverseOf :submissionFor ;
+               rdfs:domain :Assignment ;
+               rdfs:range :Submission .
+
+
+###  http://www.example.org/elearning-ontology#isTaughtBy
+:isTaughtBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :teaches ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Course ;
+            rdfs:range :Instructor .
+
+
+###  http://www.example.org/elearning-ontology#offersProgram
+:offersProgram rdf:type owl:ObjectProperty ;
+               rdfs:domain :Department ;
+               rdfs:range :DegreeProgram .
+
+
+###  http://www.example.org/elearning-ontology#submissionFor
+:submissionFor rdf:type owl:ObjectProperty ;
+               rdfs:domain :Submission ;
+               rdfs:range :Assignment .
+
+
+###  http://www.example.org/elearning-ontology#submits
+:submits rdf:type owl:ObjectProperty ;
+         owl:inverseOf :submittedBy ;
+         rdfs:domain :Student ;
+         rdfs:range :Submission .
+
+
+###  http://www.example.org/elearning-ontology#submittedBy
+:submittedBy rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Submission ;
+             rdfs:range :Student .
+
+
+###  http://www.example.org/elearning-ontology#teaches
+:teaches rdf:type owl:ObjectProperty ;
+         rdfs:domain :Instructor ;
+         rdfs:range :Course .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.example.org/elearning-ontology#courseCode
+:courseCode rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Course ;
+            rdfs:range xsd:string .
+
+
+###  http://www.example.org/elearning-ontology#courseTitle
+:courseTitle rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Course ;
+             rdfs:range xsd:string .
+
+
+###  http://www.example.org/elearning-ontology#credits
+:credits rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Course ;
+         rdfs:range xsd:integer .
+
+
+###  http://www.example.org/elearning-ontology#dueDate
+:dueDate rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Assignment ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://www.example.org/elearning-ontology#durationInWeeks
+:durationInWeeks rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :Module ;
+                 rdfs:range xsd:integer .
+
+
+###  http://www.example.org/elearning-ontology#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Person ;
+          rdfs:range xsd:string .
+
+
+###  http://www.example.org/elearning-ontology#hasName
+:hasName rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:string .
+
+
+###  http://www.example.org/elearning-ontology#score
+:score rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Grade ;
+       rdfs:range xsd:float .
+
+
+###  http://www.example.org/elearning-ontology#submissionDate
+:submissionDate rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Submission ;
+                rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.example.org/elearning-ontology#AcademicContent
+:AcademicContent rdf:type owl:Class .
+
+
+###  http://www.example.org/elearning-ontology#Assessment
+:Assessment rdf:type owl:Class .
+
+
+###  http://www.example.org/elearning-ontology#Assignment
+:Assignment rdf:type owl:Class ;
+            rdfs:subClassOf :Assessment .
+
+
+###  http://www.example.org/elearning-ontology#Course
+:Course rdf:type owl:Class ;
+        rdfs:subClassOf :AcademicContent .
+
+
+###  http://www.example.org/elearning-ontology#DegreeProgram
+:DegreeProgram rdf:type owl:Class ;
+               rdfs:subClassOf :AcademicContent .
+
+
+###  http://www.example.org/elearning-ontology#Department
+:Department rdf:type owl:Class ;
+            rdfs:subClassOf :Faculty .
+
+
+###  http://www.example.org/elearning-ontology#Evaluation
+:Evaluation rdf:type owl:Class .
+
+
+###  http://www.example.org/elearning-ontology#Faculty
+:Faculty rdf:type owl:Class ;
+         rdfs:subClassOf :Institution .
+
+
+###  http://www.example.org/elearning-ontology#Grade
+:Grade rdf:type owl:Class ;
+       rdfs:subClassOf :Evaluation .
+
+
+###  http://www.example.org/elearning-ontology#Institution
+:Institution rdf:type owl:Class .
+
+
+###  http://www.example.org/elearning-ontology#Instructor
+:Instructor rdf:type owl:Class ;
+            rdfs:subClassOf :Person .
+
+
+###  http://www.example.org/elearning-ontology#Module
+:Module rdf:type owl:Class ;
+        rdfs:subClassOf :AcademicContent .
+
+
+###  http://www.example.org/elearning-ontology#Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.example.org/elearning-ontology#Quiz
+:Quiz rdf:type owl:Class ;
+      rdfs:subClassOf :Assessment ,
+                      :Module .
+
+
+###  http://www.example.org/elearning-ontology#ReadingMaterial
+:ReadingMaterial rdf:type owl:Class ;
+                 rdfs:subClassOf :Module .
+
+
+###  http://www.example.org/elearning-ontology#Student
+:Student rdf:type owl:Class ;
+         rdfs:subClassOf :Person .
+
+
+###  http://www.example.org/elearning-ontology#Submission
+:Submission rdf:type owl:Class .
+
+
+###  http://www.example.org/elearning-ontology#TeachingAssistant
+:TeachingAssistant rdf:type owl:Class ;
+                   rdfs:subClassOf :Person .
+
+
+###  http://www.example.org/elearning-ontology#VideoLecture
+:VideoLecture rdf:type owl:Class ;
+              rdfs:subClassOf :Module .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.example.org/elearning-ontology#BScComputerEngineering
+:BScComputerEngineering rdf:type :DegreeProgram .
+
+
+###  http://www.example.org/elearning-ontology#CS101
+:CS101 rdf:type :Course ;
+       :isTaughtBy :ProfSmith ;
+       :courseCode "CS-101" ;
+       :courseTitle "Introduction to Programming" ;
+       :credits 4 .
+
+
+###  http://www.example.org/elearning-ontology#CS201
+:CS201 rdf:type :Course ;
+       :hasPrerequisite :CS101 ;
+       :isTaughtBy :ProfJohnson ;
+       :courseCode "CS-201" ;
+       :courseTitle "Data Structures" ;
+       :credits 5 .
+
+
+###  http://www.example.org/elearning-ontology#CS550
+:CS550 rdf:type :Course ;
+       :hasAssignment :CS550_Project ;
+       :isTaughtBy :ProfSmith ;
+       :courseCode "CS-550" ;
+       :courseTitle "Knowledge Engineering" ;
+       :credits 3 .
+
+
+###  http://www.example.org/elearning-ontology#CS550_Project
+:CS550_Project rdf:type :Assignment ;
+               :dueDate "2026-06-15T23:59:00"^^xsd:dateTime .
+
+
+###  http://www.example.org/elearning-ontology#ComputerEngineering
+:ComputerEngineering rdf:type :Department ;
+                     :belongsToDepartment :EngineeringFaculty ;
+                     :offersProgram :BScComputerEngineering .
+
+
+###  http://www.example.org/elearning-ontology#CourseShape
+:CourseShape rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+             <http://www.w3.org/ns/shacl#property> [ <http://www.w3.org/ns/shacl#class> :Instructor ;
+                                                     <http://www.w3.org/ns/shacl#maxCount> 1 ;
+                                                     <http://www.w3.org/ns/shacl#message> "A course must have exactly one instructor!" ;
+                                                     <http://www.w3.org/ns/shacl#minCount> 1 ;
+                                                     <http://www.w3.org/ns/shacl#path> :isTaughtBy
+                                                   ] ;
+             <http://www.w3.org/ns/shacl#targetClass> :Course .
+
+
+###  http://www.example.org/elearning-ontology#Course_Gen1
+:Course_Gen1 rdf:type :Course ;
+             :courseCode "CS-292" ;
+             :courseTitle "Bachelor of Business" .
+
+
+###  http://www.example.org/elearning-ontology#Course_Gen2
+:Course_Gen2 rdf:type :Course ;
+             :courseCode "CS-226" ;
+             :courseTitle "Bachelor of Design" .
+
+
+###  http://www.example.org/elearning-ontology#Course_Gen3
+:Course_Gen3 rdf:type :Course ;
+             :courseCode "CS-131" ;
+             :courseTitle "Master of Law" .
+
+
+###  http://www.example.org/elearning-ontology#EngineeringFaculty
+:EngineeringFaculty rdf:type :Faculty .
+
+
+###  http://www.example.org/elearning-ontology#GradeShape
+:GradeShape rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+            <http://www.w3.org/ns/shacl#property> [ <http://www.w3.org/ns/shacl#datatype> xsd:float ;
+                                                    <http://www.w3.org/ns/shacl#maxInclusive> 100.0 ;
+                                                    <http://www.w3.org/ns/shacl#message> "Grade score must be a float between 0.0 and 100.0!" ;
+                                                    <http://www.w3.org/ns/shacl#minInclusive> 0.0 ;
+                                                    <http://www.w3.org/ns/shacl#path> :score
+                                                  ] ;
+            <http://www.w3.org/ns/shacl#targetClass> :Grade .
+
+
+###  http://www.example.org/elearning-ontology#Grade_Gen1
+:Grade_Gen1 rdf:type :Grade ;
+            :score "64.6"^^xsd:float .
+
+
+###  http://www.example.org/elearning-ontology#Grade_Gen2
+:Grade_Gen2 rdf:type :Grade ;
+            :score "76.3"^^xsd:float .
+
+
+###  http://www.example.org/elearning-ontology#Grade_Gen3
+:Grade_Gen3 rdf:type :Grade ;
+            :score "51.4"^^xsd:float .
+
+
+###  http://www.example.org/elearning-ontology#Grade_Gen4
+:Grade_Gen4 rdf:type :Grade ;
+            :score "96.6"^^xsd:float .
+
+
+###  http://www.example.org/elearning-ontology#Grade_Gen5
+:Grade_Gen5 rdf:type :Grade ;
+            :score "84.9"^^xsd:float .
+
+
+###  http://www.example.org/elearning-ontology#Grade_Jalil_CS550
+:Grade_Jalil_CS550 rdf:type :Grade ;
+                   :score 95.5 .
+
+
+###  http://www.example.org/elearning-ontology#ProfJohnson
+:ProfJohnson rdf:type :Instructor ;
+             :hasEmail "sarah.j@example.edu" ;
+             :hasName "Dr. Sarah Johnson" .
+
+
+###  http://www.example.org/elearning-ontology#ProfSmith
+:ProfSmith rdf:type :Instructor ;
+           :belongsToDepartment :ComputerEngineering ;
+           :hasEmail "alan.smith@example.edu" ;
+           :hasName "Dr. Alan Smith" .
+
+
+###  http://www.example.org/elearning-ontology#StudentShape
+:StudentShape rdf:type <http://www.w3.org/ns/shacl#NodeShape> ;
+              <http://www.w3.org/ns/shacl#property> [ <http://www.w3.org/ns/shacl#class> :Course ;
+                                                      <http://www.w3.org/ns/shacl#message> "A student must be enrolled in at least one course!" ;
+                                                      <http://www.w3.org/ns/shacl#minCount> 1 ;
+                                                      <http://www.w3.org/ns/shacl#path> :enrolledIn
+                                                    ] ;
+              <http://www.w3.org/ns/shacl#targetClass> :Student .
+
+
+###  http://www.example.org/elearning-ontology#Student_Gen1
+:Student_Gen1 rdf:type :Student ;
+              :hasEmail "mrs..bertram.jones@student.example.edu" ;
+              :hasName "Mrs. Bertram Jones" .
+
+
+###  http://www.example.org/elearning-ontology#Student_Gen2
+:Student_Gen2 rdf:type :Student ;
+              :hasEmail "mayme.dibbert@student.example.edu" ;
+              :hasName "Mayme Dibbert" .
+
+
+###  http://www.example.org/elearning-ontology#Student_Gen3
+:Student_Gen3 rdf:type :Student ;
+              :hasEmail "marybelle.sporer@student.example.edu" ;
+              :hasName "Marybelle Sporer" .
+
+
+###  http://www.example.org/elearning-ontology#Student_Gen4
+:Student_Gen4 rdf:type :Student ;
+              :hasEmail "evan.gulgowski@student.example.edu" ;
+              :hasName "Evan Gulgowski" .
+
+
+###  http://www.example.org/elearning-ontology#Student_Gen5
+:Student_Gen5 rdf:type :Student ;
+              :hasEmail "doretha.stracke@student.example.edu" ;
+              :hasName "Doretha Stracke" .
+
+
+###  http://www.example.org/elearning-ontology#Student_Heydar
+:Student_Heydar rdf:type :Student ;
+                :enrolledIn :CS201 ,
+                            :CS550 ;
+                :hasEmail "heydar@student.example.edu" ;
+                :hasName "Heydar Mehdizade" .
+
+
+###  http://www.example.org/elearning-ontology#Student_Jalil
+:Student_Jalil rdf:type :Student ;
+               :enrolledIn :CS101 ,
+                           :CS550 ;
+               :hasEmail "jalil@student.example.edu" ;
+               :hasName "Jalil Guliyev" .
+
+
+###  http://www.example.org/elearning-ontology#Student_Mahammadali
+:Student_Mahammadali rdf:type :Student ;
+                     :enrolledIn :CS101 ,
+                                 :CS201 ,
+                                 :CS550 ;
+                     :hasEmail "mahammadali@student.example.edu" ;
+                     :hasName "Mahammadali Aliyev" .
+
+
+###  http://www.example.org/elearning-ontology#Sub_Jalil_CS550
+:Sub_Jalil_CS550 rdf:type :Submission ;
+                 :hasGrade :Grade_Jalil_CS550 ;
+                 :submissionFor :CS550_Project ;
+                 :submittedBy :Student_Jalil ;
+                 :submissionDate "2026-06-05T10:00:00"^^xsd:dateTime .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

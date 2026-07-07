@@ -1,0 +1,749 @@
+<h2 id="crossreference" class="list">Cross-reference for E-Learning System Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by E-Learning System Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#AcademicContent" title="http://www.example.org/elearning-ontology#AcademicContent">Academic Content</a></li>
+  <li><a href="#Assessment" title="http://www.example.org/elearning-ontology#Assessment">Assessment</a></li>
+  <li><a href="#Assignment" title="http://www.example.org/elearning-ontology#Assignment">Assignment</a></li>
+  <li><a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a></li>
+  <li><a href="#Evaluation" title="http://www.example.org/elearning-ontology#Evaluation">Evaluation</a></li>
+  <li><a href="#Grade" title="http://www.example.org/elearning-ontology#Grade">Grade</a></li>
+  <li><a href="#Instructor" title="http://www.example.org/elearning-ontology#Instructor">Instructor</a></li>
+  <li><a href="#Module" title="http://www.example.org/elearning-ontology#Module">Module</a></li>
+  <li><a href="#Person" title="http://www.example.org/elearning-ontology#Person">Person</a></li>
+  <li><a href="#Student" title="http://www.example.org/elearning-ontology#Student">Student</a></li>
+  <li><a href="#Submission" title="http://www.example.org/elearning-ontology#Submission">Submission</a></li>
+ </ul>
+ <div class="entity" id="AcademicContent">
+  <h3>Academic Content<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#AcademicContent</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>, <a href="#Module" title="http://www.example.org/elearning-ontology#Module">Module</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Assessment" title="http://www.example.org/elearning-ontology#Assessment">Assessment</a> <sup class="type-c" title="class">c</sup>, <a href="#Evaluation" title="http://www.example.org/elearning-ontology#Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>, <a href="#Person" title="http://www.example.org/elearning-ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>, <a href="#Submission" title="http://www.example.org/elearning-ontology#Submission">Submission</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Assessment">
+  <h3>Assessment<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Assessment</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Assignment" title="http://www.example.org/elearning-ontology#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AcademicContent" title="http://www.example.org/elearning-ontology#AcademicContent">Academic Content</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Assignment">
+  <h3>Assignment<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Assignment</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Assessment" title="http://www.example.org/elearning-ontology#Assessment">Assessment</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#dueDate" title="http://www.example.org/elearning-ontology#dueDate">due Date</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSubmission" title="http://www.example.org/elearning-ontology#hasSubmission">has submission</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasAssignment" title="http://www.example.org/elearning-ontology#hasAssignment">has assignment</a> <sup class="type-op" title="object property">op</sup>, <a href="#submissionFor" title="http://www.example.org/elearning-ontology#submissionFor">submission for</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Course">
+  <h3>Course<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Course</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AcademicContent" title="http://www.example.org/elearning-ontology#AcademicContent">Academic Content</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#courseTitle" title="http://www.example.org/elearning-ontology#courseTitle">course Title</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#courseCode" title="http://www.example.org/elearning-ontology#courseCode">course code</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAssignment" title="http://www.example.org/elearning-ontology#hasAssignment">has assignment</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasModule" title="http://www.example.org/elearning-ontology#hasModule">has module</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPrerequisite" title="http://www.example.org/elearning-ontology#hasPrerequisite">has prerequisite</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasStudent" title="http://www.example.org/elearning-ontology#hasStudent">has student</a> <sup class="type-op" title="object property">op</sup>, <a href="#isTaughtBy" title="http://www.example.org/elearning-ontology#isTaughtBy">is taught by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#enrolledIn" title="http://www.example.org/elearning-ontology#enrolledIn">enrolled in</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasPrerequisite" title="http://www.example.org/elearning-ontology#hasPrerequisite">has prerequisite</a> <sup class="type-op" title="object property">op</sup>, <a href="#teaches" title="http://www.example.org/elearning-ontology#teaches">teaches</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Evaluation">
+  <h3>Evaluation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Evaluation</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Grade" title="http://www.example.org/elearning-ontology#Grade">Grade</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AcademicContent" title="http://www.example.org/elearning-ontology#AcademicContent">Academic Content</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Grade">
+  <h3>Grade<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Grade</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Evaluation" title="http://www.example.org/elearning-ontology#Evaluation">Evaluation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#score" title="http://www.example.org/elearning-ontology#score">score</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasGrade" title="http://www.example.org/elearning-ontology#hasGrade">has grade</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Instructor">
+  <h3>Instructor<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Instructor</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="http://www.example.org/elearning-ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#teaches" title="http://www.example.org/elearning-ontology#teaches">teaches</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#isTaughtBy" title="http://www.example.org/elearning-ontology#isTaughtBy">is taught by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Student" title="http://www.example.org/elearning-ontology#Student">Student</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Module">
+  <h3>Module<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Module</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AcademicContent" title="http://www.example.org/elearning-ontology#AcademicContent">Academic Content</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasModule" title="http://www.example.org/elearning-ontology#hasModule">has module</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Person">
+  <h3>Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Person</p>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Instructor" title="http://www.example.org/elearning-ontology#Instructor">Instructor</a> <sup class="type-c" title="class">c</sup>, <a href="#Student" title="http://www.example.org/elearning-ontology#Student">Student</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasName" title="http://www.example.org/elearning-ontology#hasName">has Name</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AcademicContent" title="http://www.example.org/elearning-ontology#AcademicContent">Academic Content</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Student">
+  <h3>Student<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Student</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="http://www.example.org/elearning-ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#enrolledIn" title="http://www.example.org/elearning-ontology#enrolledIn">enrolled in</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasEmail" title="http://www.example.org/elearning-ontology#hasEmail">has Email</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#submits" title="http://www.example.org/elearning-ontology#submits">submits</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasStudent" title="http://www.example.org/elearning-ontology#hasStudent">has student</a> <sup class="type-op" title="object property">op</sup>, <a href="#submittedBy" title="http://www.example.org/elearning-ontology#submittedBy">submitted by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Instructor" title="http://www.example.org/elearning-ontology#Instructor">Instructor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Submission">
+  <h3>Submission<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#Submission</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasGrade" title="http://www.example.org/elearning-ontology#hasGrade">has grade</a> <sup class="type-op" title="object property">op</sup>, <a href="#submissionDate" title="http://www.example.org/elearning-ontology#submissionDate">submission Date</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#submissionFor" title="http://www.example.org/elearning-ontology#submissionFor">submission for</a> <sup class="type-op" title="object property">op</sup>, <a href="#submittedBy" title="http://www.example.org/elearning-ontology#submittedBy">submitted by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasSubmission" title="http://www.example.org/elearning-ontology#hasSubmission">has submission</a> <sup class="type-op" title="object property">op</sup>, <a href="#submits" title="http://www.example.org/elearning-ontology#submits">submits</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AcademicContent" title="http://www.example.org/elearning-ontology#AcademicContent">Academic Content</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#enrolledIn" title="http://www.example.org/elearning-ontology#enrolledIn">enrolled in</a></li>
+  <li><a href="#hasAssignment" title="http://www.example.org/elearning-ontology#hasAssignment">has assignment</a></li>
+  <li><a href="#hasGrade" title="http://www.example.org/elearning-ontology#hasGrade">has grade</a></li>
+  <li><a href="#hasModule" title="http://www.example.org/elearning-ontology#hasModule">has module</a></li>
+  <li><a href="#hasPrerequisite" title="http://www.example.org/elearning-ontology#hasPrerequisite">has prerequisite</a></li>
+  <li><a href="#hasStudent" title="http://www.example.org/elearning-ontology#hasStudent">has student</a></li>
+  <li><a href="#hasSubmission" title="http://www.example.org/elearning-ontology#hasSubmission">has submission</a></li>
+  <li><a href="#isTaughtBy" title="http://www.example.org/elearning-ontology#isTaughtBy">is taught by</a></li>
+  <li><a href="#submissionFor" title="http://www.example.org/elearning-ontology#submissionFor">submission for</a></li>
+  <li><a href="#submits" title="http://www.example.org/elearning-ontology#submits">submits</a></li>
+  <li><a href="#submittedBy" title="http://www.example.org/elearning-ontology#submittedBy">submitted by</a></li>
+  <li><a href="#teaches" title="http://www.example.org/elearning-ontology#teaches">teaches</a></li>
+ </ul>
+ <div class="entity" id="enrolledIn">
+  <h3>enrolled in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#enrolledIn</p>
+  <div class="comment">
+   <span class="markdown">Relates a Student to the Course they are enrolled in.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Student" title="http://www.example.org/elearning-ontology#Student">Student</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasStudent" title="http://www.example.org/elearning-ontology#hasStudent">has student</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAssignment">
+  <h3>has assignment<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#hasAssignment</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Assignment" title="http://www.example.org/elearning-ontology#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasGrade">
+  <h3>has grade<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#hasGrade</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Submission" title="http://www.example.org/elearning-ontology#Submission">Submission</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Grade" title="http://www.example.org/elearning-ontology#Grade">Grade</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasModule">
+  <h3>has module<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#hasModule</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Module" title="http://www.example.org/elearning-ontology#Module">Module</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasPrerequisite">
+  <h3>has prerequisite<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#hasPrerequisite</p>
+  <div class="comment">
+   <span class="markdown">Transitive: if A requires B and B requires C, then A requires C.</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> transitive</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasStudent">
+  <h3>has student<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#hasStudent</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Student" title="http://www.example.org/elearning-ontology#Student">Student</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#enrolledIn" title="http://www.example.org/elearning-ontology#enrolledIn">enrolled in</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSubmission">
+  <h3>has submission<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#hasSubmission</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Assignment" title="http://www.example.org/elearning-ontology#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Submission" title="http://www.example.org/elearning-ontology#Submission">Submission</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#submissionFor" title="http://www.example.org/elearning-ontology#submissionFor">submission for</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="isTaughtBy">
+  <h3>is taught by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#isTaughtBy</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Instructor" title="http://www.example.org/elearning-ontology#Instructor">Instructor</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#teaches" title="http://www.example.org/elearning-ontology#teaches">teaches</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="submissionFor">
+  <h3>submission for<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#submissionFor</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Submission" title="http://www.example.org/elearning-ontology#Submission">Submission</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Assignment" title="http://www.example.org/elearning-ontology#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasSubmission" title="http://www.example.org/elearning-ontology#hasSubmission">has submission</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="submits">
+  <h3>submits<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#submits</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Student" title="http://www.example.org/elearning-ontology#Student">Student</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Submission" title="http://www.example.org/elearning-ontology#Submission">Submission</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#submittedBy" title="http://www.example.org/elearning-ontology#submittedBy">submitted by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="submittedBy">
+  <h3>submitted by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#submittedBy</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Submission" title="http://www.example.org/elearning-ontology#Submission">Submission</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Student" title="http://www.example.org/elearning-ontology#Student">Student</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#submits" title="http://www.example.org/elearning-ontology#submits">submits</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="teaches">
+  <h3>teaches<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#teaches</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Instructor" title="http://www.example.org/elearning-ontology#Instructor">Instructor</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#isTaughtBy" title="http://www.example.org/elearning-ontology#isTaughtBy">is taught by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#courseCode" title="http://www.example.org/elearning-ontology#courseCode">course code</a></li>
+  <li><a href="#courseTitle" title="http://www.example.org/elearning-ontology#courseTitle"> <span>course Title</span> </a></li>
+  <li><a href="#dueDate" title="http://www.example.org/elearning-ontology#dueDate"> <span>due Date</span> </a></li>
+  <li><a href="#hasEmail" title="http://www.example.org/elearning-ontology#hasEmail"> <span>has Email</span> </a></li>
+  <li><a href="#hasName" title="http://www.example.org/elearning-ontology#hasName"> <span>has Name</span> </a></li>
+  <li><a href="#score" title="http://www.example.org/elearning-ontology#score"> <span>score</span> </a></li>
+  <li><a href="#submissionDate" title="http://www.example.org/elearning-ontology#submissionDate"> <span>submission Date</span> </a></li>
+ </ul>
+ <div class="entity" id="courseCode">
+  <h3>course code<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#courseCode</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="courseTitle">
+  <h3>course Title<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#courseTitle</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Course" title="http://www.example.org/elearning-ontology#Course">Course</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="dueDate">
+  <h3>due Date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#dueDate</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Assignment" title="http://www.example.org/elearning-ontology#Assignment">Assignment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasEmail">
+  <h3>has Email<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#hasEmail</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Student" title="http://www.example.org/elearning-ontology#Student">Student</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasName">
+  <h3>has Name<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#hasName</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Person" title="http://www.example.org/elearning-ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="score">
+  <h3>score<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#score</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Grade" title="http://www.example.org/elearning-ontology#Grade">Grade</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="submissionDate">
+  <h3>submission Date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.example.org/elearning-ontology#submissionDate</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Submission" title="http://www.example.org/elearning-ontology#Submission">Submission</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
